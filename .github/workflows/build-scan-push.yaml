@@ -77,9 +77,9 @@ jobs:
           exit-code: 1 # ${{ steps.exit-code.outputs.exit_code }}
           severity: CRITICAL,HIGH
 
-      - name: Check for vulnerabilities
-        if: steps.trivy.outputs.exit_code == 1
-        uses: actions/github-script@v5
-        with:
-          script: |
-            core.setFailed('Vulnerabilities found in the image.')
+      # - name: Check for vulnerabilities
+      #   if: steps.trivy.outputs.exit_code == 1
+      #   uses: actions/github-script@v5
+      #   with:
+      #     script: |
+      #       core.setFailed('Vulnerabilities found in the image.')
