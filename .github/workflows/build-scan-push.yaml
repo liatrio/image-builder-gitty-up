@@ -74,7 +74,7 @@ jobs:
         uses: aquasecurity/trivy-action@0105373003c89c494a3f436bd5efc57f3ac1ca20
         with:
           image-ref: ${{ env.IMAGE_NAME }}:test
-          exit-code: 1 # ${{ steps.exit-code.outputs.exit_code }}
+          exit-code: ${{ steps.exit-code.outputs.exit_code }}
           severity: CRITICAL,HIGH
 
       # - name: Check for vulnerabilities
