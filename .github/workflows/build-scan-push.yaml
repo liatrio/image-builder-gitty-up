@@ -75,7 +75,7 @@ jobs:
         with:
           image-ref: ${{ env.IMAGE_NAME }}:test
           exit-code: 1 # ${{ steps.exit-code.outputs.exit_code }}
-          severity: CRITICAL
+          severity: CRITICAL,HIGH
 
       - name: Check for vulnerabilities
         if: steps.trivy.outputs.exit_code == 1
